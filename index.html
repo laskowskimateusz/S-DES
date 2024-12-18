@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Szyfrowanie S-DES</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="encryptForm">
+        <h2>Szyfrowanie S-DES</h2>
+        <div class="form-group">
+          <label for="text">8-Bitowy Tekst</label>
+          <input
+            type="text"
+            id="text"
+            name="text"
+            pattern="[01]{8}"
+            maxlength="8"
+            title="Dane wejściowe muszą zawierać dokładnie 8 znaków składających się z 0 i 1"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="key">10-Bitowy Klucz</label>
+          <input
+            type="text"
+            id="key"
+            name="key"
+            pattern="[01]{10}"
+            maxlength="10"
+            title="Klucz musi mieć dokładnie 10 znaków składających się z 0 i 1"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="result">Zaszyfrowany Tekst</label>
+          <textarea id="result" name="result" rows="1" readonly></textarea>
+        </div>
+        <div class="button-container">
+          <button type="button" onclick="performSDES()">Szyfruj</button>
+          <button type="reset">Wyczyść</button>
+        </div>
+      </form>
+    </div>
+    <script src="sdes.js"></script>
+  </body>
+</html>
